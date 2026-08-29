@@ -1,12 +1,12 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-//file2
+
 class FormAppointment {
 
     public void open() { 
 
-        // Create Frame
+    
         JFrame f1 = new JFrame ("Book Appointment");
 
         f1.setSize(700, 600);
@@ -160,16 +160,16 @@ class FormAppointment {
 
     public void actionPerformed(ActionEvent e) {
 
-        // Get owner data
+        
         String customerName = customerField.getText();
         String phoneNumber = phoneField.getText();
         String ownerSex = sexField1.getText();
 
-        // Create Owner object
+        
         Owner owner = new Owner(customerName, phoneNumber, ownerSex);
 
 
-        // Get pet data
+
         String petName = nameField.getText();
         String petAge = ageField.getText();
         String petSex = sexField2.getText();
@@ -177,17 +177,17 @@ class FormAppointment {
         String appointmentDate = dateField.getText();
         String appointmentTime = timeField.getText();
 
-        // Create Animal object
+        
         Animal animal = new Animal(petName,petAge,petSex,petType,appointmentDate,appointmentTime);
 
 
-        // Save appointment to database
+        
         AppointmentDatabase.addAppointment(customerName,ownerSex,phoneNumber,petName,petAge,petSex,petType,appointmentDate,appointmentTime);
 
         JOptionPane.showMessageDialog(f1,"Appointment Booked Successfully!");
 
 
-        // Optional: clear fields
+    
         customerField.setText("");
         phoneField.setText("");
         sexField1.setText("");
